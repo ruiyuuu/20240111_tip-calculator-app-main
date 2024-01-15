@@ -16,13 +16,18 @@ export default function Home() {
   const [check15, setCheck15] = useState(false);
   const [check25, setCheck25] = useState(false);
   const [check50, setCheck50] = useState(false);
-  const [custom, setCustom] = useState("")
+  const [custom, setCustom] = useState("");
   useEffect(() => {
-    setTip(
-      Math.ceil(bill * people * five * ten * fifteen * twf * fifty * custom),
-    );
-    setTotal(bill * people+tip);
-  }, [five, ten, fifteen, twf, fifty,bill,people,tip,custom]);
+    if (custom === "") {
+      setTip(Math.ceil(bill * people * five * ten * fifteen * twf * fifty));
+      setTotal(bill * people + tip);
+    } else {
+      setTip(
+        Math.ceil(bill * people * five * ten * fifteen * twf * fifty * custom),
+      );
+      setTotal(bill * people + tip);
+    }
+  }, [five, ten, fifteen, twf, fifty, bill, people, tip, custom]);
 
   const handleBill = (e) => {
     setBill(e.target.value);
@@ -42,6 +47,7 @@ export default function Home() {
     setFifteen("1");
     setTwf("1");
     setFifty("1");
+    setCustom("");
     setCheck5(true);
     setCheck10(false);
     setCheck15(false);
@@ -54,6 +60,7 @@ export default function Home() {
     setFifteen("1");
     setTwf("1");
     setFifty("1");
+    setCustom("");
     setCheck10(true);
     setCheck5(false);
     setCheck15(false);
@@ -66,6 +73,8 @@ export default function Home() {
     setFifteen("0.15");
     setTwf("1");
     setFifty("1");
+    setCustom("");
+
     setCheck15(true);
     setCheck5(false);
     setCheck10(false);
@@ -78,6 +87,8 @@ export default function Home() {
     setFifteen("0.25");
     setTwf("1");
     setFifty("1");
+    setCustom("");
+
     setCheck25(true);
     setCheck5(false);
     setCheck10(false);
@@ -90,6 +101,8 @@ export default function Home() {
     setFifteen("1");
     setTwf("1");
     setFifty("0.5");
+    setCustom("");
+
     setCheck50(true);
     setCheck5(false);
     setCheck10(false);
@@ -105,6 +118,8 @@ export default function Home() {
     setFifteen("1");
     setTwf("1");
     setFifty("1");
+    setCustom("");
+
     setCheck5(false);
     setCheck10(false);
     setCheck15(false);
@@ -124,7 +139,7 @@ export default function Home() {
     setCheck10(false);
     setCheck15(false);
     setCheck25(false);
-  }
+  };
   return (
     <main className="container-fluid mx-0 mt-[24px] flex flex-col items-center justify-center gap-[24px] px-0 md:container md:mx-auto md:mt-[60px] md:gap-[48px] md:px-16 xl:px-72">
       <h1 className="text-[24px] font-[500px] tracking-[10.08px]">
