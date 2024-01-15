@@ -2,26 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .filter {
+    @apply bg-primary-dark text-white flex items-center justify-center py-[8px] rounded-[6px] font-bold active:bg-primary active:text-primary-dark text-[24px] cursor-pointer hover:bg-primary
+    hover:text-primary-dark transition-all;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  input[type="radio"]:checked + .filter{
+    @apply bg-primary text-primary-dark
+  }
+  .filter-secondary {
+    @apply uppercase bg-primary-200/20 text-primary-dark ;
+  }
+  label{
+    @apply text-primary-dark font-bold
+  }
+  p.label{
+    @apply text-primary-dark font-bold
+  }
+    @layer base {
+  
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  .input{
+    @apply bg-primary-200/30 rounded-[8px] px-[16px] py-[8px] flex text-end font-bold focus-within:outline-primary transition-all
+  }
+  .small{
+    @apply text-[13px] text-white/40
+  }
+  .btn-primary{
+    @apply bg-primary rounded-[8px] text-primary-dark  text-[20px] h-[48px] w-[100%] flex uppercase items-center justify-center font-bold hover:bg-primary-200 transition-all
+  }
+  .custom{
+    @apply bg-primary-200/20 text-primary-dark flex items-center justify-center py-[8px] rounded-[6px] font-bold text-[24px] transition-all hover:bg-primary-dark hover:text-white text-center placeholder-primary-dark hover:placeholder-white/20
+  }
 }
