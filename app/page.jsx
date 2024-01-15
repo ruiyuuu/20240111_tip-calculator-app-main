@@ -126,7 +126,7 @@ export default function Home() {
     setCheck25(false);
   }
   return (
-    <main className="container-fluid mx-0 mt-[24px] flex flex-col items-center justify-center gap-[24px] px-0 md:container md:mx-auto md:mt-[60px] md:gap-[48px] md:px-72">
+    <main className="container-fluid mx-0 mt-[24px] flex flex-col items-center justify-center gap-[24px] px-0 md:container md:mx-auto md:mt-[60px] md:gap-[48px] md:px-16 xl:px-72">
       <h1 className="text-[24px] font-[500px] tracking-[10.08px]">
         SPLI
         <br />
