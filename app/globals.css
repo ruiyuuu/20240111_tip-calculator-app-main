@@ -35,7 +35,7 @@
     @apply text-[13px] text-white/40
   }
   .btn-primary{
-    @apply bg-primary rounded-[8px] text-primary-dark  text-[20px] h-[48px] w-[100%] flex uppercase items-center justify-center font-bold hover:bg-primary-200 transition-all
+    @apply bg-primary rounded-[8px] text-primary-dark  text-[20px] h-[48px] w-[100%] flex uppercase items-center justify-center font-bold hover:bg-primary-200 transition-all disabled:opacity-60 disabled:hover:bg-primary
   }
   .custom{
     @apply bg-primary-200/20 text-primary-dark flex items-center justify-center py-[8px] rounded-[6px] font-bold text-[24px] transition-all hover:bg-primary-dark hover:text-white text-center placeholder-primary-dark hover:placeholder-white/20
